@@ -102,3 +102,8 @@ https://randomuser.me/api/
 - CI/CD deployment pipeline
 - Elasticsearch integration
 
+## Pipeline Validation
+
+### Final Output Validation
+
+![Final Output](screenshots/Final_output_validation1.png)
