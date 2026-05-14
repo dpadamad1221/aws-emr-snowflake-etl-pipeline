@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+*.pem
+*.key
+credentials.json
+config/config.py
+.ipynb_checkpoints/
+.vscode/
+.idea/
