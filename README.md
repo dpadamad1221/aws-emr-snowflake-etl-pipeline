@@ -2,38 +2,35 @@
 
 ## Project Overview
 
-This project demonstrates an end-to-end Data Engineering pipeline using:
+This project demonstrates an end-to-end Data Engineering pipeline built using AWS EMR, PySpark, Amazon S3, Snowflake, Spark SQL, Git, and GitHub Actions.
 
-- AWS EMR
-- PySpark
-- Amazon S3
-- Snowflake
-- Spark SQL
-- Git & GitHub workflow
-
-The pipeline ingests nested JSON data from the Random User API, performs flattening and transformations using PySpark, writes curated Parquet datasets to Amazon S3, integrates Snowflake as a secondary source system, applies business logic, performs multi-source joins, and stores the final analytical dataset back into S3.
+The pipeline ingests nested JSON data from the Random User API, performs flattening and transformations using PySpark on AWS EMR, stores curated Parquet datasets in Amazon S3, integrates Snowflake as a secondary source system, applies business logic transformations, performs multi-source joins, and writes the final analytical output back to S3.
 
 ---
 
-## Architecture
+## End-to-End Pipeline Flow
 
-API JSON Data
+Random User API
 ↓
-PySpark Flattening
+AWS EMR PySpark Processing
 ↓
-S3 Parquet (File 1)
+Nested JSON Flattening
+↓
+Curated Parquet Output to S3 (File 1)
 ↓
 Business Dataset Generation
 ↓
-Snowflake Integration
+Load Business Data into Snowflake
 ↓
-PySpark Business Logic
+Read Snowflake Data into Spark
 ↓
-File 2 Written to S3
+Apply Business Logic Transformations
 ↓
-Multi-source Join
+Write Processed Dataset to S3 (File 2)
 ↓
-Final Curated Dataset to S3
+Join File 1 and File 2 using UUID
+↓
+Final Curated Output written to S3
 
 ---
 
@@ -45,36 +42,34 @@ Final Curated Dataset to S3
 - Amazon S3
 - Snowflake
 - Spark SQL
-- GitHub Actions
 - Git
+- GitHub Actions
+- Linux / Ubuntu
 
 ---
 
 ## Key Features
 
-- Nested JSON flattening
-- Parquet optimization
-- Snowflake-Spark integration
+- Nested JSON flattening using PySpark
 - Multi-source ETL pipeline
+- Snowflake integration with Spark
 - Business rule transformations
-- UUID-based joins
+- UUID-based dataset joins
+- Parquet-based optimized storage
+- AWS cloud data lake architecture
 - Git branching workflow
-- CI pipeline using GitHub Actions
+- GitHub Actions CI integration
 
 ---
 
-## Dataset
+## Business Logic Implemented
 
-Source API:
-https://randomuser.me/api/
-
----
-
-## Sample Business Logic
+The secondary business dataset includes:
 
 - Credit score generation
 - Customer status classification
-- Loan eligibility derivation
+- Risk category derivation
+- Loan eligibility calculation
 
 ---
 
@@ -93,17 +88,26 @@ https://randomuser.me/api/
 
 ---
 
-## Future Enhancements
-
-- Apache Airflow orchestration
-- Incremental data loading
-- Athena integration
-- Snowflake staging optimization
-- CI/CD deployment pipeline
-- Elasticsearch integration
-
 ## Pipeline Validation
 
 ### Final Output Validation
 
 ![Final Output](screenshots/Final_output_validation1.png)
+
+---
+
+## Future Enhancements
+
+- Apache Airflow orchestration
+- Incremental ETL processing
+- Athena integration
+- Snowflake staging optimization
+- CI/CD deployment pipeline
+- Elasticsearch integration
+- Data quality checks and monitoring
+
+---
+
+## Author
+
+Dijo Padamadan
